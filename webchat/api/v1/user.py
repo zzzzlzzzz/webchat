@@ -2,10 +2,9 @@ from flask_restful import Resource
 
 
 class User(Resource):
-    def get(self, username: str):
+    def get(self):
         """Get alive username
 
-        :param username: Requesting user
         :return: [{'username': <username>}, ...]
         """
         return ''
