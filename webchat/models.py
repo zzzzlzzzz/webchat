@@ -11,6 +11,9 @@ class User(db.Model):
     visited = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     posts = db.relationship('Post', back_populates='user', cascade='all, delete-orphan', passive_deletes=True)
 
+    def __init__(self, username: str):
+        self.username = username
+
 
 class Post(db.Model):
     __tablename__ = 'post'
